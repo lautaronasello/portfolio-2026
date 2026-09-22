@@ -35,12 +35,6 @@ export const AboutMe = () => {
               alta productividad, mitigar la deuda técnica y acelerar la entrega
               de productos de alto impacto.
             </p>
-            <p className='text-sm text-(--text-muted) leading-relaxed'>
-              Creo firmemente que el mejor valor agregado que le puedo ofrecer a
-              cualquier ambito, mas alla de mi experiencia y habilidades
-              tecnicas, es mi capacidad de mantener el buen ambiente y las
-              buenas relaciones interpersonales.
-            </p>
           </div>
 
           {/* Human Factor / Outside terminal */}
