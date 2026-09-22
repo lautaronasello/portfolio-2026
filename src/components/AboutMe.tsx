@@ -22,23 +22,13 @@ export const AboutMe = () => {
           {/* Professional Philosophy */}
           <div>
             <h3 className='text-lg font-semibold text-(--text-primary) mb-3'>
-              Detrás del código
+              Filosofía de Ingeniería
             </h3>
             <p className='text-sm text-(--text-muted) leading-relaxed mb-4'>
-              ¡Hola! Soy Lautaro Nasello y soy desarrollador Fullstack. Me
-              apasiona resolver problemas complejos intentando aplicar
-              soluciones sistematicas y prolijas, aunque tambien a veces invento
-              soluciones mas creativas y resolutivas. Esto no solo lo aplico a
-              mi desarrollo profesional sino tambien en mi ambito personal. Me
-              preocupa mantener buenas relaciones interpersonales ya que
-              considero que son importantes para el desarrollo profesional y
-              personal.
+              Abordo el desarrollo de software como un sistema evolutivo donde las decisiones de arquitectura deben equilibrar mantenibilidad, tiempo de entrega y requerimientos del negocio. Priorizo la modularidad (Clean Architecture), el manejo explícito de errores y la documentación transparente de trade-offs mediante Architecture Decision Records (ADR).
             </p>
             <p className='text-sm text-(--text-muted) leading-relaxed'>
-              Creo firmemente que el mejor valor agregado que le puedo ofrecer a
-              cualquier ambito, mas alla de mi experiencia y habilidades
-              tecnicas, es mi capacidad de mantener el buen ambiente y las
-              buenas relaciones interpersonales.
+              Combino el rigor técnico con una sólida capacidad de comunicación y colaboración. Concibo el trabajo en equipo como un catalizador para mantener un ambiente de alta productividad, mitigar la deuda técnica y acelerar la entrega de productos de alto impacto.
             </p>
           </div>
 

@@ -37,17 +37,24 @@ export const Projects = () => {
             className='group flex flex-col justify-between p-6 bg-(--bg-card) rounded-2xl border border-(--border-color) hover:border-(--accent) transition-all duration-200 shadow-sm hover:shadow-md'
           >
             <div>
-              {/* Category */}
-              <span className='text-xs font-semibold uppercase tracking-wider text-(--accent)'>
-                {project.category}
-              </span>
+              {/* Header with Category and Metric Badge */}
+              <div className='flex items-center justify-between gap-2 mb-2'>
+                <span className='text-xs font-semibold uppercase tracking-wider text-(--accent)'>
+                  {project.category}
+                </span>
+                {project.metricBadge && (
+                  <span className='px-2 py-0.5 text-[10px] font-bold tracking-wide rounded-full bg-(--accent-light) text-(--accent) border border-(--border-color)'>
+                    {project.metricBadge}
+                  </span>
+                )}
+              </div>
 
               {/* Title */}
-              <h3 className='text-xl font-bold mt-2 mb-3 text-(--text-primary)'>
+              <h3 className='text-xl font-bold mt-1 mb-3 text-(--text-primary)'>
                 {project.title}
               </h3>
 
-              {/* Client Value */}
+              {/* Client Value / Impact */}
               <p className='text-sm text-(--text-muted) leading-relaxed mb-4'>
                 {project.clientView.solution}
               </p>
@@ -69,10 +76,10 @@ export const Projects = () => {
             <div className='pt-4 border-t border-(--border-color) flex items-center justify-between'>
               <button
                 onClick={() => setSelectedProject(project)}
-                className='inline-flex items-center gap-1.5 text-xs font-semibold text-(--accent) hover:underline'
+                className='inline-flex items-center gap-1.5 text-xs font-semibold text-(--accent) hover:underline cursor-pointer'
               >
                 <LuCpu className='w-3.5 h-3.5' />
-                <span>Ver arquitectura</span>
+                <span>Ver Arquitectura & ADR</span>
               </button>
 
               {(project.techView.demoUrl || project.techView.webUrl) && (
