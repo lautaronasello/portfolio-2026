@@ -39,7 +39,14 @@ export const Capabilities = () => {
     {
       title: 'Frontend & Mobile',
       icon: LuLayers,
-      skills: ['Next.js', 'React', 'Flutter', 'TypeScript', 'Tailwind CSS'],
+      skills: [
+        'Next.js',
+        'React',
+        'Flutter',
+        'TypeScript',
+        'Tailwind CSS',
+        'Material UI',
+      ],
     },
     {
       title: 'Backend & Bases de Datos',
@@ -51,12 +58,20 @@ export const Capabilities = () => {
         'Supabase',
         'TypeORM',
         'WebSockets',
+        'MySQL',
       ],
     },
     {
       title: 'Herramientas & Ecosistema',
       icon: LuWrench,
-      skills: ['Git', 'Docker', 'Firebase', 'n8n', 'Figma (UI/UX)'],
+      skills: [
+        'Git',
+        'Docker',
+        'Firebase',
+        'n8n',
+        'Figma (UI/UX)',
+        'Antigravity',
+      ],
     },
   ];
 

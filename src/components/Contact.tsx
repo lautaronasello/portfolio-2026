@@ -34,11 +34,11 @@ export const Contact = () => {
         {/* Botón Principal (Mail Directo) */}
         <div className='flex justify-center mb-8'>
           <a
-            href='mailto:tu-email@ejemplo.com'
+            href='mailto:lautaronasello@gmail.com'
             className='inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold text-white rounded-xl bg-(--accent) hover:opacity-90 transition shadow-sm'
           >
             <LuMail className='w-4 h-4' />
-            <span>Enviar Correo Directo</span>
+            <span>lautaronasello@gmail.com</span>
           </a>
         </div>
 

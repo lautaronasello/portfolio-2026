@@ -37,4 +37,16 @@ export interface AIProject {
   roleHighlights: string[];
 }
 
+export interface OtherProject {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  screenshots?: string[];
+  githubUrl?: string;
+  demoUrl?: string;
+  category?: string;
+}
+
 export type Palette = 'indigo' | 'teal' | 'amber';
+

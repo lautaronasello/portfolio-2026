@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 import { projectsData } from '@/data/projects';
 import { Project } from '@/types/project';
 import { ProjectDrawer } from './ProjectDrawer';
-import { LuCpu, LuExternalLink } from 'react-icons/lu';
+import { OtherProjectsModal } from './OtherProjectsModal';
+import { LuCpu, LuExternalLink, LuFolderGit2 } from 'react-icons/lu';
 import { motion } from 'framer-motion';
-import { FaChrome } from 'react-icons/fa';
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isOtherProjectsOpen, setIsOtherProjectsOpen] = useState(false);
 
   return (
     <motion.section
@@ -34,7 +35,8 @@ export const Projects = () => {
         {projectsData.map((project) => (
           <div
             key={project.id}
-            className='group flex flex-col justify-between p-6 bg-(--bg-card) rounded-2xl border border-(--border-color) hover:border-(--accent) transition-all duration-200 shadow-sm hover:shadow-md'
+            onClick={() => setSelectedProject(project)}
+            className='cursor-pointer group flex flex-col justify-between p-6 bg-(--bg-card) rounded-2xl border border-(--border-color) hover:border-(--accent) transition-all duration-200 shadow-sm hover:shadow-md'
           >
             <div>
               {/* Category */}
@@ -90,6 +92,17 @@ export const Projects = () => {
         ))}
       </div>
 
+      {/* Button to view other projects */}
+      <div className='mt-10 flex justify-center'>
+        <button
+          onClick={() => setIsOtherProjectsOpen(true)}
+          className='inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-(--text-primary) bg-(--bg-card) border border-(--border-color) hover:border-(--accent) hover:text-(--accent) rounded-xl shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer'
+        >
+          <LuFolderGit2 className='w-4 h-4 text-(--accent)' />
+          <span>Ver otros proyectos</span>
+        </button>
+      </div>
+
       {/* Tech Detail Modal/Drawer */}
       {selectedProject && (
         <ProjectDrawer
@@ -97,6 +110,13 @@ export const Projects = () => {
           onClose={() => setSelectedProject(null)}
         />
       )}
+
+      {/* Other Projects Modal */}
+      <OtherProjectsModal
+        isOpen={isOtherProjectsOpen}
+        onClose={() => setIsOtherProjectsOpen(false)}
+      />
     </motion.section>
   );
 };
+

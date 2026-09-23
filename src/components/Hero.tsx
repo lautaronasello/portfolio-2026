@@ -9,7 +9,7 @@ export const Hero = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className='max-w-4xl mx-auto px-6 pt-20 pb-16 text-center md:text-left scroll-mt-10'
+      className='max-w-6xl mx-auto px-6 pt-20 pb-16 text-center md:text-left scroll-mt-10'
     >
       {/* Main Headline (Opción C) */}
       <h1 className='text-3xl md:text-5xl font-extrabold tracking-tight leading-tight text-(--text-primary) mb-6'>

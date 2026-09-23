@@ -46,22 +46,23 @@ export const AboutMe = () => {
               <li className='flex items-center gap-3 p-3 rounded-xl bg-(--bg-main) border border-(--border-color)'>
                 <LuCoffee className='w-4 h-4 text-(--accent) shrink-0' />
                 <span>
-                  <strong>Combustible:</strong> El mate es infaltable en cada
-                  sesión de desarrollo.
+                  <strong>Combustible:</strong> El mate o el cafe son
+                  infaltables en cada sesión de desarrollo.
                 </span>
               </li>
               <li className='flex items-center gap-3 p-3 rounded-xl bg-(--bg-main) border border-(--border-color)'>
                 <LuActivity className='w-4 h-4 text-(--accent) shrink-0' />
                 <span>
                   <strong>En movimiento:</strong> Fuera de la computadora me vas
-                  a encontrar jugando al pádel o entrenando.
+                  a encontrar jugando al pádel o entrenando en un gimnasio.
                 </span>
               </li>
               <li className='flex items-center gap-3 p-3 rounded-xl bg-(--bg-main) border border-(--border-color)'>
                 <LuTerminal className='w-4 h-4 text-(--accent) shrink-0' />
                 <span>
-                  <strong>Curiosidad:</strong> Explorando nuevas herramientas,
-                  automatizaciones e integraciones para simplificar procesos.
+                  <strong>Curiosidad:</strong> Tocar la guitarra y caminar son
+                  mis formas de liberar la cabeza cuando no encuentro una
+                  solucion a un problema.
                 </span>
               </li>
             </ul>
