@@ -41,15 +41,15 @@ const AIProjectCard: React.FC<{
 
         {/* Problem → Solution */}
         <div className='space-y-3'>
-          <div className='rounded-xl bg-(--bg-main) border border-(--border-color) p-4'>
-            <p className='text-xs font-semibold text-(--text-muted) uppercase tracking-wider mb-1'>
+          <div className='rounded-xl bg-(--bg-main) border border-(--border-color) p-4 min-h-60'>
+            <p className='text-xs font-semibold text-(--text-muted) uppercase tracking-wider mb-1 '>
               Problema del cliente
             </p>
-            <p className='text-sm text-(--text-muted) leading-relaxed h-34 overflow-clip'>
+            <p className='text-sm text-(--text-muted) leading-relaxed'>
               {project.problem}
             </p>
           </div>
-          <div className='rounded-xl bg-(--accent-light) border border-(--border-color) p-4'>
+          <div className='rounded-xl bg-(--accent-light) border border-(--border-color) p-4 min-h-64'>
             <p className='text-xs font-semibold text-(--accent) uppercase tracking-wider mb-1'>
               Solución implementada
             </p>

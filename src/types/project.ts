@@ -23,14 +23,11 @@ export interface Project {
 }
 
 export type Channel = 'whatsapp' | 'instagram' | 'facebook';
-export type AITool = 'ChatGPT' | 'Claude' | 'Gemini' | 'Claude Haiku' | 'GPT-4o' | 'Claude 3.5';
 
 export interface AIProject {
   id: string;
   title: string;
   sector: string;
-  channels: Channel[];
-  aiTools: AITool[];
   n8nTools: string[];
   problem: string;
   solution: string;
@@ -49,4 +46,3 @@ export interface OtherProject {
 }
 
 export type Palette = 'indigo' | 'teal' | 'amber';
-
