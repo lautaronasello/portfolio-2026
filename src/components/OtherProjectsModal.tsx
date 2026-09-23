@@ -205,7 +205,7 @@ export const OtherProjectsModal: React.FC<OtherProjectsModalProps> = ({
             >
               <LuX className='w-6 h-6' />
             </button>
-            <img
+            <Image
               src={selectedImage}
               alt='Screenshot ampliada'
               className='max-w-full max-h-[85vh] rounded-xl object-contain shadow-2xl border border-white/10'

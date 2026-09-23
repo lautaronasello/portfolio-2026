@@ -27,7 +27,7 @@ export const Hero = () => {
       {/* Action Buttons */}
       <div className='flex flex-col sm:flex-row items-center gap-4'>
         <a
-          href='mailto:[EMAIL_ADDRESS]'
+          href='mailto:lautaronasello@gmail.com'
           className='w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white rounded-xl bg-(--accent) hover:opacity-90 transition shadow-sm'
         >
           <LuMail className='w-4 h-4' />
