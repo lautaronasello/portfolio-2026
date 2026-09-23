@@ -35,7 +35,7 @@ export const Hero = () => {
         </a>
 
         <a
-          href='/cv.pdf'
+          href='/docs/cv.pdf'
           target='_blank'
           rel='noopener noreferrer'
           className='w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl border border-(--border-color) text-(--text-primary) hover:bg-(--bg-card) hover:border-(--accent) transition'

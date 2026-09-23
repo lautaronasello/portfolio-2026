@@ -45,7 +45,7 @@ export const Contact = () => {
         {/* Accesos Secundarios */}
         <div className='pt-8 border-t border-(--border-color) flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-(--text-muted)'>
           <a
-            href='/cv.pdf'
+            href='/docs/cv.pdf'
             target='_blank'
             rel='noopener noreferrer'
             className='inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-(--bg-main) border border-(--border-color) hover:border-(--accent) hover:text-(--text-primary) transition'

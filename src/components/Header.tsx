@@ -93,7 +93,7 @@ export const Header = () => {
 
           {/* Download CV */}
           <a
-            href='/cv.pdf'
+            href='/docs/cv.pdf'
             target='_blank'
             rel='noopener noreferrer'
             className='flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg border border-(--border-color) hover:border-(--accent) hover:text-(--accent) transition'
