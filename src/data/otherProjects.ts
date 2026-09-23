@@ -2,53 +2,51 @@ import { OtherProject } from '@/types/project';
 
 export const otherProjectsData: OtherProject[] = [
   {
-    id: 'gestion-facturacion',
-    title: 'Sistema de Gestión de Clientes y Facturación',
+    id: 'gestion-integral-pedidos',
+    title: 'Sistema de Gestión integral de pedidos',
     description:
-      'Plataforma web para emisión de comprobantes, gestión de clientes y seguimiento de facturas pendientes con reportes exportables en PDF.',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Express'],
+      'Sistema integral que permite a las dependencias públicas generar, administrar y hacer un seguimiento detallado de los pedidos de insumos y materiales de manera sencilla y centralizada.',
+    technologies: ['React', '.NET', 'MySQL', 'Material UI', 'Express'],
     screenshots: [
-      'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
+      '/projects/gip/home.png',
+      '/projects/gip/solicitudes.png',
+      '/projects/gip/confirmacion.png',
     ],
-    githubUrl: 'https://github.com/lautaronasello',
   },
   {
-    id: 'scraper-precios',
-    title: 'Bot Monitoreo y Scraping de Precios',
+    id: 'bandeja-compras-contrataciones',
+    title: 'Bandeja compras y contrataciones',
     description:
-      'Script automatizado en Python para monitoreo diario de precios en e-commerce con alertas inmediatas por Telegram ante variaciones de stock o valor.',
-    technologies: ['Python', 'BeautifulSoup', 'Selenium', 'Telegram API', 'APScheduler'],
+      'La plataforma Bandeja de Compras y Contrataciones (BCC) ha sido diseñada para centralizar y optimizar la gestión de compras y contrataciones en las dependencias públicas de la provincia. Su objetivo es reducir la burocracia, mejorar la organización y garantizar la transparencia en cada operación administrativa relacionada con la adquisición de bienes y servicios.',
+    technologies: ['React', '.NET', 'MySQL', 'Material UI', 'Express'],
     screenshots: [
-      'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80',
+      '/projects/cyc/home.png',
+      '/projects/cyc/bandeja.png',
+      '/projects/cyc/requerimientos.png',
+      '/projects/cyc/combinar.png',
     ],
-    githubUrl: 'https://github.com/lautaronasello',
   },
   {
-    id: 'control-gastos-app',
-    title: 'App Móvil de Control de Gastos Personales',
+    id: 'agrotech-app',
+    title: 'Agrotech - app gestión de productos y servicios',
     description:
-      'Aplicación multiplataforma para registro rápido de ingresos/egresos, categorización automática y gráficos estadísticos mensuales.',
-    technologies: ['Flutter', 'Dart', 'Hive', 'Provider', 'Fl_chart'],
-    screenshots: [
-      'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1000&q=80',
+      'Aplicación mobile para registro de aplicacion de productos agricolas, generar reportes de rendimiento y monitoreo de siembras.',
+    technologies: [
+      'NestJS',
+      'Flutter',
+      'Dart',
+      'Hive',
+      'BLoC',
+      'Apple',
+      'Android',
     ],
-    githubUrl: 'https://github.com/lautaronasello',
   },
   {
-    id: 'buscador-ia-pdf',
-    title: 'Buscador Inteligente sobre Documentos (RAG)',
+    id: 'portfolio-legacy',
+    title: 'Portfolio Web - version anterior',
     description:
-      'Herramienta CLI y Web para consultar manuales y documentos PDF extensos mediante búsquedas semánticas e IA en lenguaje natural.',
-    technologies: ['Python', 'FastAPI', 'LangChain', 'Qdrant', 'OpenAI API'],
-    githubUrl: 'https://github.com/lautaronasello',
-  },
-  {
-    id: 'email-marketing-n8n',
-    title: 'Workflow de Automatización de Email Marketing',
-    description:
-      'Flujo de trabajo en n8n que procesa leads entrantes de formularios web, valida datos, asigna etiquetas y envía secuencias personalizadas.',
-    technologies: ['n8n', 'Webhooks', 'JavaScript', 'SendGrid API', 'Google Sheets'],
+      'Version anterior de mi portafolio web. Si bien no creo que sea un proyecto bien armado fue parte de mis primeros pasos. En el mismo podran encontrar tambien mis primeros proyectos prueba que realice por cuenta propia. Tales son: PokeApp, Spotytime (clon de spotify), Snake Game, NotesApp, entre otros. No obtuvo mantenimiento por lo que algunos proyectos pueden no estar levantados.',
+    technologies: ['React', 'Firebase', 'JavaScript', 'Boostrap'],
+    demoUrl: 'https://lautaronasello.web.app/',
   },
 ];

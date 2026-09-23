@@ -23,7 +23,8 @@ export const Header = () => {
           href='#'
           className='font-bold text-lg tracking-tight hover:opacity-80 transition'
         >
-          <span className='text-(--accent)'>&lt;</span>Dev
+          <span className='text-(--accent)'>&lt;</span>Lautaro Martin Nasello
+          Vittar
           <span className='text-(--accent)'>/&gt;</span>
         </a>
 

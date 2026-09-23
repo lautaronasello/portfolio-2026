@@ -3,8 +3,16 @@
 import React, { useState } from 'react';
 import { OtherProject } from '@/types/project';
 import { otherProjectsData } from '@/data/otherProjects';
-import { LuX, LuFolderGit2, LuExternalLink, LuImage, LuGithub, LuLayers } from 'react-icons/lu';
+import {
+  LuX,
+  LuFolderGit2,
+  LuExternalLink,
+  LuImage,
+  LuGithub,
+  LuLayers,
+} from 'react-icons/lu';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 interface OtherProjectsModalProps {
   isOpen: boolean;
@@ -136,7 +144,9 @@ export const OtherProjectsModal: React.FC<OtherProjectsModalProps> = ({
                     <div className='mt-4 pt-3 border-t border-(--border-color)'>
                       <div className='flex items-center gap-1.5 text-xs font-semibold text-(--text-muted) mb-2.5'>
                         <LuImage className='w-3.5 h-3.5 text-(--accent)' />
-                        <span>Capturas de pantalla ({proj.screenshots.length}):</span>
+                        <span>
+                          Capturas de pantalla ({proj.screenshots.length}):
+                        </span>
                       </div>
                       <div className='grid grid-cols-2 sm:grid-cols-3 gap-2.5'>
                         {proj.screenshots.map((imgUrl, idx) => (
@@ -145,9 +155,11 @@ export const OtherProjectsModal: React.FC<OtherProjectsModalProps> = ({
                             onClick={() => setSelectedImage(imgUrl)}
                             className='relative group aspect-video rounded-lg overflow-hidden border border-(--border-color) cursor-pointer bg-slate-900/50'
                           >
-                            <img
+                            <Image
                               src={imgUrl}
                               alt={`${proj.title} screenshot ${idx + 1}`}
+                              fill
+                              unoptimized
                               className='w-full h-full object-cover group-hover:scale-105 transition duration-300'
                             />
                             <div className='absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-medium gap-1'>
@@ -168,7 +180,11 @@ export const OtherProjectsModal: React.FC<OtherProjectsModalProps> = ({
           <div className='p-4 border-t border-(--border-color) bg-(--bg-card) text-center text-xs text-(--text-muted)'>
             <p>
               ¿Quieres conocer más detalles sobre algún proyecto en específico?{' '}
-              <a href='#contacto' onClick={onClose} className='text-(--accent) font-medium underline'>
+              <a
+                href='#contacto'
+                onClick={onClose}
+                className='text-(--accent) font-medium underline'
+              >
                 Contáctame
               </a>
             </p>

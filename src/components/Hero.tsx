@@ -19,9 +19,9 @@ export const Hero = () => {
 
       {/* Subtitle */}
       <p className='text-lg md:text-xl text-(--text-muted) leading-relaxed mb-8 max-w-2xl'>
-        Desarrollador Fullstack especializado en ecosistemas web y móviles.
-        Diseño la arquitectura backend y construyo interfaces centradas en el
-        usuario.
+        Mi nombre es Lautaro y soy desarrollador Fullstack especializado en
+        ecosistemas web y móviles. Diseño la arquitectura backend y construyo
+        interfaces visuales centradas en el usuario.
       </p>
 
       {/* Action Buttons */}
