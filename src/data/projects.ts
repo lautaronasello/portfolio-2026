@@ -37,7 +37,7 @@ export const projectsData: Project[] = [
       highlights: [
         'Integración con SDK de Mercado Pago para procesamiento de pagos en tiempo real.',
         'Módulo de geolocalización para filtrado eficiente por radio de cercanía.',
-        'Chat privado bidireccional y sistema de puntuación con cálculo ponderado.',
+        'Chat cifrado de punta a punta y sistema de puntuación con cálculo ponderado.',
         'Sistema de autenticacion basado en roles (user, provider, admin)',
         'Notificaciones push en tiempo real para nuevas solicitudes de servicios y mensajes.',
         'Sistema de geolocalización para el filtrado eficiente por radio de cercanía.',
@@ -47,9 +47,13 @@ export const projectsData: Project[] = [
       playStoreUrl:
         'https://play.google.com/store/apps/details?id=com.don.oficios&hl=es_AR',
       screenshots: [
-        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=1200&q=80',
+        '/projects/don/don-1.jpeg',
+        '/projects/don/don-2.jpeg',
+        '/projects/don/don-3.jpeg',
+        '/projects/don/don-4.jpeg',
+        '/projects/don/don-5.jpeg',
+        '/projects/don/don-6.jpeg',
+        '/projects/don/don-7.jpeg',
       ],
     },
   },
@@ -76,7 +80,7 @@ export const projectsData: Project[] = [
     },
     techView: {
       stack: [
-        'Next.js 14',
+        'Next.js',
         'TypeScript',
         'Node.js',
         'Gemini / OpenAI API',
@@ -93,7 +97,7 @@ export const projectsData: Project[] = [
       highlights: [
         'Prompts estructurados para extracción de preferencias y coincidencia con atributos del producto.',
         'Filtrado reactivo en el cliente sin recargas de página.',
-        'Diseño ultraliviano pensado para conversión rápida en dispositivos móviles.',
+        'Diseño ultraliviano pensado para conversión rápida en dispositivos móviles y web.',
       ],
       githubUrl: 'https://github.com/lautaronasello/CTRLPadel-app',
       demoUrl: 'https://padel-bot-assistant-ten.vercel.app',
@@ -144,6 +148,9 @@ export const projectsData: Project[] = [
         'Sincronización instantánea de agendas y notificaciones Push.',
         'Panel analítico en tiempo real con métricas de asistencia y participación.',
         'Sistema de chat por salas y contactos directos entre participantes.',
+        'Chat cifrado de punta a punta.',
+        'Arquitectura monolitica para escalar de manera sencilla.',
+        'Panel administrador web con manejo de usuarios, eventos y métricas.',
       ],
     },
   },
