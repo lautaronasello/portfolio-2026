@@ -6,6 +6,7 @@ import { AboutMe } from '@/components/AboutMe';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Contact } from '../components/Contact';
 import { Capabilities } from '../components/Capabilities';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
           </p>
         </footer>
       </main>
+      <Analytics />
     </ThemeProvider>
   );
 }
