@@ -154,4 +154,61 @@ export const projectsData: Project[] = [
       ],
     },
   },
+  {
+    id: 'nexo',
+    title: 'NEXO Merchant Console',
+    category: 'Fintech Platform & Dashboard',
+    tags: [
+      'Next.js',
+      'NestJS',
+      'PostgreSQL',
+      'Prisma',
+      'BullMQ',
+      'Clean Architecture',
+      'TanStack Query',
+    ],
+    clientView: {
+      problem:
+        'Los comercios carecen de transparencia sobre las comisiones de las pasarelas de pago, desconocen las fechas exactas de acreditación y no cuentan con herramientas para conciliar transacciones, impuestos y liquidaciones en un solo lugar.',
+      solution:
+        'Plataforma fintech fullstack (consola web + API transaccional) que centraliza la gestión de cobros multicanal (Débito, Crédito, QR), simula costos de liquidación en tiempo real, audita retenciones impositivas y permite monitorear el ciclo de vida de los fondos desde el cobro hasta la acreditación neta en cuenta.',
+      businessValue:
+        'Motor de liquidaciones asíncrono con BullMQ que aplica reglas tarifarias diferenciadas por medio de pago (0.6% QR a 6.5% crédito 3 cuotas) con cálculo automático de IVA (21%), idempotencia garantizada en cada transacción y soporte de acreditación anticipada con penalidad financiera configurable.',
+    },
+    techView: {
+      screenshots: [
+        '/projects/nexo/nexo-1.png',
+        '/projects/nexo/nexo-2.png',
+        '/projects/nexo/nexo-3.png',
+        '/projects/nexo/nexo-4.png',
+        '/projects/nexo/nexo-5.png',
+      ],
+      webUrl: 'https://nexo-pay-nine.vercel.app/',
+      githubUrl: 'https://github.com/lautaronasello/nexo-app',
+
+      stack: [
+        'Next.js (App Router)',
+        'React',
+        'TypeScript',
+        'Tailwind CSS',
+        'Axios',
+        'NestJS',
+        'Prisma ORM',
+        'PostgreSQL',
+        'BullMQ',
+        'Swagger',
+      ],
+      architecture:
+        'Arquitectura Clean Architecture en ambas capas. Frontend: Domain → Application (hooks) → Infrastructure (repos HTTP) → Presentation (UI). Backend: módulos NestJS desacoplados (Merchants, Transactions, Settlements, Queues) con motor de liquidaciones asíncrono via BullMQ y Prisma como ORM tipado sobre PostgreSQL.',
+      highlights: [
+        'Motor de liquidaciones asíncrono con BullMQ: procesa y agenda acreditaciones sin bloquear el ciclo de cobro.',
+        'Reglas tarifarias diferenciadas por medio de pago: QR 0.6%, Débito 0.8%, Crédito 1 pago 1.8%, Crédito 3 cuotas 6.5% (+ penalidad de adelanto).',
+        'Simulador de liquidaciones en tiempo real con desglose de comisión, IVA (21%) y fecha exacta de acreditación.',
+        'Idempotencia garantizada en cada transacción mediante claves UUID v4 únicas.',
+        'Gestor multicomercio con conmutación instantánea entre sucursales y balances independientes.',
+        'Emulador de cobros tipo POS con validación en tiempo real.',
+        'API documentada con Swagger y contenerizada con Docker Compose.',
+      ],
+    },
+  },
 ];
