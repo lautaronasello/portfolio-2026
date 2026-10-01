@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { aiProjectsData } from '@/data/aiProjects';
 import { AIProject } from '@/types/project';
+import { useLanguage } from './LanguageProvider';
 import { LuBot, LuWorkflow, LuPlus } from 'react-icons/lu';
 import { ProjectListDrawer } from './ProjectListDrawer';
 
@@ -13,6 +14,16 @@ const AIProjectCard: React.FC<{
   index: number;
   onToggle: () => void;
 }> = ({ project, index, onToggle }) => {
+  const { t } = useLanguage();
+  const itemTrans =
+    t.aiProjects.items[project.id as keyof typeof t.aiProjects.items];
+
+  const sector = itemTrans?.sector ?? project.sector;
+  const title = itemTrans?.title ?? project.title;
+  const problem = itemTrans?.problem ?? project.problem;
+  const solution = itemTrans?.solution ?? project.solution;
+  const roleHighlights = itemTrans?.roleHighlights ?? project.roleHighlights;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -31,10 +42,10 @@ const AIProjectCard: React.FC<{
           <div className='flex-1 min-w-0'>
             <span className='inline-flex items-center gap-1.5 text-xs font-semibold text-(--accent) uppercase tracking-wider mb-1.5'>
               <LuBot className='w-3.5 h-3.5' />
-              {project.sector}
+              {sector}
             </span>
             <h3 className='text-lg font-bold text-(--text-primary) leading-snug'>
-              {project.title}
+              {title}
             </h3>
           </div>
         </div>
@@ -43,18 +54,18 @@ const AIProjectCard: React.FC<{
         <div className='space-y-3'>
           <div className='rounded-xl bg-(--bg-main) border border-(--border-color) p-4 min-h-60'>
             <p className='text-xs font-semibold text-(--text-muted) uppercase tracking-wider mb-1 '>
-              Problema del cliente
+              {t.aiProjects.clientProblem}
             </p>
             <p className='text-sm text-(--text-muted) leading-relaxed'>
-              {project.problem}
+              {problem}
             </p>
           </div>
           <div className='rounded-xl bg-(--accent-light) border border-(--border-color) p-4 min-h-64'>
             <p className='text-xs font-semibold text-(--accent) uppercase tracking-wider mb-1'>
-              Solución implementada
+              {t.aiProjects.implementedSolution}
             </p>
             <p className='text-sm text-(--text-primary) leading-relaxed'>
-              {project.solution}
+              {solution}
             </p>
           </div>
         </div>
@@ -64,8 +75,8 @@ const AIProjectCard: React.FC<{
           <div className='w-full flex items-center justify-between text-xs font-semibold text-(--text-primary) hover:text-(--accent) transition'>
             <span className='flex items-center gap-1.5'>
               <LuWorkflow className='w-3.5 h-3.5 text-(--accent)' />
-              Mi rol en la configuración ({project.roleHighlights.length}{' '}
-              puntos)
+              {t.aiProjects.myRole} ({roleHighlights.length}{' '}
+              {t.aiProjects.pointsSuffix})
             </span>
 
             <LuPlus className='w-4 h-4 text-(--text-muted) transition' />
@@ -81,6 +92,7 @@ export const AIProjects = () => {
   const [selectedProject, setSelectedProject] = useState<AIProject | null>(
     null,
   );
+  const { t } = useLanguage();
 
   return (
     <motion.section
@@ -94,22 +106,10 @@ export const AIProjects = () => {
       {/* Section header */}
       <div className='mb-10'>
         <h2 className='text-2xl font-bold tracking-tight text-(--text-primary)'>
-          Últimos Proyectos
+          {t.aiProjects.title}
         </h2>
         <p className='text-sm text-(--text-muted) mt-1.5 max-w-2xl leading-relaxed'>
-          Proyectos para clientes reales donde, trabajando con la plataforma de{' '}
-          <a
-            href='https://atendium.com'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='text-(--accent) underline underline-offset-2 hover:text-(--accent-hover) transition'
-          >
-            atendium
-          </a>
-          , integré agentes de IA a sus canales de comunicación. Mi rol:
-          relevamiento de necesidades, redacción de instrucciones, carga de
-          contexto, diseño de flujos en n8n e integración con plataformas
-          externas.
+          {t.aiProjects.subtitle}
         </p>
       </div>
 
@@ -134,3 +134,4 @@ export const AIProjects = () => {
     </motion.section>
   );
 };
+

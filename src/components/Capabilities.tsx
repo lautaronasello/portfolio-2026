@@ -9,35 +9,35 @@ import {
   LuWrench,
 } from 'react-icons/lu';
 import { motion } from 'framer-motion';
+import { useLanguage } from './LanguageProvider';
 
 export const Capabilities = () => {
+  const { t } = useLanguage();
+
   const processSteps = [
     {
-      number: '01',
-      title: 'Entender & Diseñar',
-      description:
-        'Definición de la lógica de negocio, flujos de usuario y arquitectura inicial antes de escribir la primera línea de código.',
+      number: t.capabilities.processSteps.step1.number,
+      title: t.capabilities.processSteps.step1.title,
+      description: t.capabilities.processSteps.step1.description,
       icon: LuCompass,
     },
     {
-      number: '02',
-      title: 'Construir & Iterar',
-      description:
-        'Desarrollo modular y limpio para Web, Mobile y Backend con entregas continuas para validar avances en tiempo real.',
+      number: t.capabilities.processSteps.step2.number,
+      title: t.capabilities.processSteps.step2.title,
+      description: t.capabilities.processSteps.step2.description,
       icon: LuCode,
     },
     {
-      number: '03',
-      title: 'Lanzar & Optimizar',
-      description:
-        'Despliegue del producto asegurando alta velocidad de carga, seguridad, experiencia fluida y buena mantenibilidad.',
+      number: t.capabilities.processSteps.step3.number,
+      title: t.capabilities.processSteps.step3.title,
+      description: t.capabilities.processSteps.step3.description,
       icon: LuRocket,
     },
   ];
 
   const techCategories = [
     {
-      title: 'Frontend & Mobile',
+      title: t.capabilities.categories.frontend,
       icon: LuLayers,
       skills: [
         'Next.js',
@@ -49,7 +49,7 @@ export const Capabilities = () => {
       ],
     },
     {
-      title: 'Backend & Bases de Datos',
+      title: t.capabilities.categories.backend,
       icon: LuServer,
       skills: [
         'Node.js',
@@ -62,7 +62,7 @@ export const Capabilities = () => {
       ],
     },
     {
-      title: 'Herramientas & Ecosistema',
+      title: t.capabilities.categories.tools,
       icon: LuWrench,
       skills: [
         'Git',
@@ -88,10 +88,10 @@ export const Capabilities = () => {
         className='mb-12'
       >
         <h2 className='text-2xl font-bold tracking-tight text-(--text-primary)'>
-          Capacidades & Ecosistema
+          {t.capabilities.title}
         </h2>
         <p className='text-sm text-(--text-muted) mt-1'>
-          Cómo transformo ideas en software funcional de extremo a extremo.
+          {t.capabilities.subtitle}
         </p>
       </motion.div>
 
@@ -104,7 +104,7 @@ export const Capabilities = () => {
           transition={{ duration: 0.9, ease: 'easeOut' }}
         >
           <h3 className='text-lg font-bold text-(--text-primary) mb-6 flex items-center gap-2'>
-            <span>Proceso de Trabajo</span>
+            <span>{t.capabilities.processTitle}</span>
           </h3>
 
           <div className='space-y-4'>
@@ -145,7 +145,7 @@ export const Capabilities = () => {
           transition={{ duration: 0.9, ease: 'easeOut' }}
         >
           <h3 className='text-lg font-bold text-(--text-primary) mb-6 flex items-center gap-2'>
-            <span>Stack & Herramientas</span>
+            <span>{t.capabilities.stackTitle}</span>
           </h3>
 
           <div className='space-y-6'>
@@ -181,3 +181,4 @@ export const Capabilities = () => {
     </section>
   );
 };
+

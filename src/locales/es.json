@@ -1,0 +1,246 @@
+{
+  "header": {
+    "nav": {
+      "projects": "Proyectos",
+      "capabilities": "Capacidades",
+      "about": "Sobre Mí",
+      "contact": "Contacto"
+    },
+    "tooltip": "No me pude decidir qué color de acento elegir para mis componentes. ¡Lo dejo a tu elección!",
+    "cvButton": "CV"
+  },
+  "hero": {
+    "title": "Ayudo a construir productos web y móviles cuidados, funcionales e intuitivos.",
+    "subtitle": "Mi nombre es Lautaro y soy desarrollador Fullstack especializado en ecosistemas web y móviles. Diseño la arquitectura backend y construyo interfaces visuales centradas en el usuario.",
+    "sendEmail": "Enviar Mail",
+    "downloadCv": "Descargar CV"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "behindCodeTitle": "Detrás del código",
+    "behindCodeText": "Abordo el desarrollo de software como un sistema evolutivo donde las decisiones de arquitectura deben equilibrar mantenibilidad, tiempo de entrega y requerimientos del negocio. Priorizo la modularidad (Clean Architecture), el manejo explícito de errores y la documentación transparente. Combino el rigor técnico con una sólida capacidad de comunicación y colaboración. Concibo el trabajo en equipo como un catalizador para mantener un ambiente de alta productividad, mitigar la deuda técnica y acelerar la entrega de productos de alto impacto.",
+    "outsideTerminalTitle": "Fuera de la terminal",
+    "fuelLabel": "Combustible:",
+    "fuelText": "El mate o el café son infaltables en cada sesión de desarrollo.",
+    "movementLabel": "En movimiento:",
+    "movementText": "Fuera de la computadora me vas a encontrar jugando al pádel o entrenando en un gimnasio.",
+    "curiosityLabel": "Curiosidad:",
+    "curiosityText": "Tocar la guitarra y caminar son mis formas de liberar la cabeza cuando no encuentro una solución a un problema."
+  },
+  "capabilities": {
+    "title": "Capacidades & Ecosistema",
+    "subtitle": "Cómo transformo ideas en software funcional de extremo a extremo.",
+    "processTitle": "Proceso de Trabajo",
+    "processSteps": {
+      "step1": {
+        "number": "01",
+        "title": "Entender & Diseñar",
+        "description": "Definición de la lógica de negocio, flujos de usuario y arquitectura inicial antes de escribir la primera línea de código."
+      },
+      "step2": {
+        "number": "02",
+        "title": "Construir & Iterar",
+        "description": "Desarrollo modular y limpio para Web, Mobile y Backend con entregas continuas para validar avances en tiempo real."
+      },
+      "step3": {
+        "number": "03",
+        "title": "Lanzar & Optimizar",
+        "description": "Despliegue del producto asegurando alta velocidad de carga, seguridad, experiencia fluida y buena mantenibilidad."
+      }
+    },
+    "stackTitle": "Stack & Herramientas",
+    "categories": {
+      "frontend": "Frontend & Mobile",
+      "backend": "Backend & Bases de Datos",
+      "tools": "Herramientas & Ecosistema"
+    }
+  },
+  "aiProjects": {
+    "title": "Últimos Proyectos",
+    "subtitle": "Proyectos para clientes reales donde, trabajando con la plataforma de atendium, integré agentes de IA a sus canales de comunicación. Mi rol: relevamiento de necesidades, redacción de instrucciones, carga de contexto, diseño de flujos en n8n e integración con plataformas externas.",
+    "clientProblem": "Problema del cliente",
+    "implementedSolution": "Solución implementada",
+    "myRole": "Mi rol en la configuración",
+    "pointsSuffix": "puntos",
+    "items": {
+      "dise-ingenieria": {
+        "title": "Agente de reporte y publicación — Plásticos Dise",
+        "sector": "Manufactura & Reportes",
+        "problem": "La planta de producción de plásticos Dise generaba reportes diarios de producción que implicaban búsquedas y consultas tediosas para el operario. Además de esto el reporte se debía subir a la plataforma poka con ciertos comentarios específicos para luego poseer un registro en esta app de cada lote producido.",
+        "solution": "Creé un flujo que permite acceder a la base de datos de Dise, buscar el lote, obtener el historial de publicaciones de poka y generar un reporte específico predefinido por el gerente de operaciones para luego subirlo a la plataforma poka con los comentarios específicos para cada lote producido. Esto permite al operario agilizar el proceso de subida de reportes.",
+        "roleHighlights": [
+          "Creé el backend necesario en NestJS para el formateo y obtención de datos de Dise.",
+          "Creación de instrucciones de sistema con tono profesional y empático, ajustado al perfil del operario.",
+          "Carga de contexto: base de datos de Dise con el detalle de cada lote producido.",
+          "Flujo de nodos en n8n para generar reportes específicos predefinidos por el gerente de operaciones para luego subirlo a la plataforma poka.",
+          "Integración con la API de Poka para subir el reporte generado a la plataforma.",
+          "Integración con Google Sheets para registrar y almacenar los reportes generados."
+        ]
+      },
+      "agente-segufer": {
+        "title": "Agente de soporte técnico y reporte de problemas — Segufer",
+        "sector": "Seguridad Industrial",
+        "problem": "Segufer posee máquinas expendedoras de elementos de seguridad industrial. Muchas veces estas máquinas tienen problemas con la dispensación de productos o los operarios no están familiarizados con el uso de la misma o con la utilización de los elementos de seguridad.",
+        "solution": "Configuré un agente de soporte que permite a los usuarios resolver sus dudas y permite también tomar los reportes realizados por personal humano. Esto mejoró la velocidad de respuesta ante los casos de dudas sobre uso de la máquina o elementos y rapidez de respuesta ante problemas de la máquina.",
+        "roleHighlights": [
+          "Instrucciones orientadas a resolución de problemas, capacidad de responder preguntas sobre los productos y el funcionamiento de la máquina.",
+          "Flujo n8n para tomar reportes realizados por personal humano.",
+          "Integración con Google Sheets para registrar y almacenar los reportes generados.",
+          "Notificación automática por Gmail al vendedor cuando se cierra una intención de compra."
+        ]
+      },
+      "agente-ventas-coc": {
+        "title": "Agente de ventas — Círculo Odontológico Córdoba",
+        "sector": "Salud & Escuela",
+        "problem": "El Círculo Odontológico Córdoba posee un amplio catálogo de servicios y el personal de venta no lograba acompañar la demanda de consultas por parte de los clientes. Esto generaba demoras en la respuesta a los clientes y potenciales pérdidas de ventas.",
+        "solution": "Creé un agente especializado capaz de responder consultas sobre cursos, eventos y servicios, con capacidad de gestionar pre-inscripciones y pagos, integrándose con WhatsApp, Google Sheets y Supabase para centralizar y automatizar el flujo completo de ventas y administración.",
+        "roleHighlights": [
+          "Instrucciones técnicas detalladas con información sobre servicios, eventos y cursos.",
+          "Uso de la API de Google Sheets para registrar y almacenar las consultas y pre-inscripciones de los clientes.",
+          "Uso de la API de Supabase para registrar y almacenar los cursos y campañas creadas por el COC.",
+          "Configuración de LLM para clasificación de consultas.",
+          "Flujos de n8n para gestionar consultas y pre-inscripciones."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Productos diseñados para resolver problemas reales con arquitectura escalable.",
+    "viewArchitecture": "Ver arquitectura",
+    "viewOtherProjects": "Ver otros proyectos",
+    "items": {
+      "don-oficios": {
+        "title": "Don Oficios",
+        "category": "App Mobile & Social Network",
+        "clientView": {
+          "problem": "Dificultad de las personas para encontrar profesionales de confianza (plomeros, electricistas, albañiles) con referencias verificadas y cercanía.",
+          "solution": "Aplicación realizada para cliente de la cual no soy dueño del código. Red social de oficios que permite explorar servicios cercanos, verificar ubicación, ver/realizar reseñas y contactar directamente por chat privado.",
+          "businessValue": "Sistema integrado de monetización donde los proveedores adquieren tokens vía Mercado Pago para publicitar sus servicios dentro de la app."
+        },
+        "techView": {
+          "architecture": "Ecosistema móvil conectado a una API RESTful en NestJS con arquitectura en capas. Gestión de transacciones seguras para la compra de tokens y comunicación en tiempo real.",
+          "highlights": [
+            "Integración con SDK de Mercado Pago para procesamiento de pagos en tiempo real.",
+            "Módulo de geolocalización para filtrado eficiente por radio de cercanía.",
+            "Chat cifrado de punta a punta y sistema de puntuación con cálculo ponderado.",
+            "Sistema de autenticación basado en roles (user, provider, admin).",
+            "Notificaciones push en tiempo real para nuevas solicitudes de servicios y mensajes.",
+            "Sistema de geolocalización para el filtrado eficiente por radio de cercanía."
+          ]
+        }
+      },
+      "padel-ai-assistant": {
+        "title": "Padel AI assistant",
+        "category": "Web App & E-commerce IA",
+        "clientView": {
+          "problem": "La sobreoferta de paletas de pádel genera confusión e indecisión en los jugadores al momento de comprar y esto les hace perder ventas a los vendedores.",
+          "solution": "Asistente virtual inteligente que guía al usuario mediante preguntas clave sobre su nivel y estilo de juego para recomendar la paleta ideal. Trabajo en conjunto con IA.",
+          "businessValue": "Aumenta la tasa de conversión filtrando dinámicamente sobre el inventario real en stock de la tienda."
+        },
+        "techView": {
+          "architecture": "Frontend en Next.js con Server-Side Rendering (SSR) optimizado para SEO, integrado con IA que ayuda a elección de productos dentro del catálogo propio del comercio.",
+          "highlights": [
+            "Prompts estructurados para extracción de preferencias y coincidencia con atributos del producto.",
+            "Filtrado reactivo en el cliente sin recargas de página.",
+            "Diseño ultraliviano pensado para conversión rápida en dispositivos móviles y web."
+          ]
+        }
+      },
+      "pamphlet": {
+        "title": "Pamphlet",
+        "category": "Ecosistema Web & Mobile",
+        "clientView": {
+          "problem": "Dispersión de información en eventos corporativos y conferencias (cronogramas, oradores) y falta de canales de interacción entre asistentes.",
+          "solution": "Aplicación realizada para cliente de la cual no soy dueño del código. Plataforma integral: Dashboard web para que organizadores gestionen el evento y métricas, más app móvil para que los participantes consulten la agenda y hagan networking en tiempo real.",
+          "businessValue": "Centralización operativa que reduce costos logísticos, potencia la participación en tiempo real y fomenta la interacción entre asistentes."
+        },
+        "techView": {
+          "architecture": "Arquitectura Backend monolito/unificada que sirve tanto al Dashboard administrativo como a la app de los participantes, manteniendo sincronización mediante WebSockets.",
+          "highlights": [
+            "Sincronización instantánea de agendas y notificaciones Push.",
+            "Panel analítico en tiempo real con métricas de asistencia y participación.",
+            "Sistema de chat por salas y contactos directos entre participantes.",
+            "Chat cifrado de punta a punta.",
+            "Arquitectura monolítica para escalar de manera sencilla.",
+            "Panel administrador web con manejo de usuarios, eventos y métricas."
+          ]
+        }
+      },
+      "nexo": {
+        "title": "NEXO Merchant Console",
+        "category": "Fintech Platform & Dashboard",
+        "clientView": {
+          "problem": "Los comercios carecen de transparencia sobre las comisiones de las pasarelas de pago, desconocen las fechas exactas de acreditación y no cuentan con herramientas para conciliar transacciones, impuestos y liquidaciones en un solo lugar.",
+          "solution": "Plataforma fintech fullstack (consola web + API transaccional) que centraliza la gestión de cobros multicanal (Débito, Crédito, QR), simula costos de liquidación en tiempo real, audita retenciones impositivas y permite monitorear el ciclo de vida de los fondos desde el cobro hasta la acreditación neta en cuenta.",
+          "businessValue": "Motor de liquidaciones asíncrono con BullMQ que aplica reglas tarifarias diferenciadas por medio de pago (0.6% QR a 6.5% crédito 3 cuotas) con cálculo automático de IVA (21%), idempotencia garantizada en cada transacción y soporte de acreditación anticipada con penalidad financiera configurable."
+        },
+        "techView": {
+          "architecture": "Arquitectura Clean Architecture en ambas capas. Frontend: Domain → Application (hooks) → Infrastructure (repos HTTP) → Presentation (UI). Backend: módulos NestJS desacoplados (Merchants, Transactions, Settlements, Queues) con motor de liquidaciones asíncrono vía BullMQ y Prisma como ORM tipado sobre PostgreSQL.",
+          "highlights": [
+            "Motor de liquidaciones asíncrono con BullMQ: procesa y agenda acreditaciones sin bloquear el ciclo de cobro.",
+            "Reglas tarifarias diferenciadas por medio de pago: QR 0.6%, Débito 0.8%, Crédito 1 pago 1.8%, Crédito 3 cuotas 6.5% (+ penalidad de adelanto).",
+            "Simulador de liquidaciones en tiempo real con desglose de comisión, IVA (21%) y fecha exacta de acreditación.",
+            "Idempotencia garantizada en cada transacción mediante claves UUID v4 únicas.",
+            "Gestor multicomercio con conmutación instantánea entre sucursales y balances independientes.",
+            "Emulador de cobros tipo POS con validación en tiempo real.",
+            "API documentada con Swagger y contenerizada con Docker Compose."
+          ]
+        }
+      }
+    }
+  },
+  "projectDrawer": {
+    "technicalDetail": "Detalle Técnico & Arquitectura",
+    "architectureOverview": "Visión de Arquitectura",
+    "engineeringHighlights": "Highlights de Ingeniería",
+    "implementedStack": "Stack Implementado",
+    "screenshots": "Capturas de Pantalla",
+    "screenshotSingle": "captura",
+    "screenshotPlural": "capturas",
+    "viewFullGallery": "Ver galería completa",
+    "moreScreenshots": "más",
+    "viewOnGithub": "Ver en GitHub",
+    "tryDemo": "Probar Demo",
+    "goToWeb": "Ir a la web",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "carouselCount": "Captura {current} de {total}"
+  },
+  "otherProjectsModal": {
+    "title": "Otros Proyectos",
+    "subtitle": "Desarrollos adicionales, herramientas, bots y experimentos.",
+    "technologies": "Tecnologías:",
+    "screenshots": "Capturas de pantalla",
+    "enlarge": "Ampliar",
+    "footerText": "¿Quieres conocer más detalles sobre algún proyecto en específico?",
+    "contactMe": "Contáctame",
+    "closeModal": "Cerrar modal",
+    "items": {
+      "gestion-integral-pedidos": {
+        "title": "Sistema de Gestión integral de pedidos",
+        "description": "Sistema integral que permite a las dependencias públicas generar, administrar y hacer un seguimiento detallado de los pedidos de insumos y materiales de manera sencilla y centralizada."
+      },
+      "bandeja-compras-contrataciones": {
+        "title": "Bandeja compras y contrataciones",
+        "description": "La plataforma Bandeja de Compras y Contrataciones (BCC) ha sido diseñada para centralizar y optimizar la gestión de compras y contrataciones en las dependencias públicas de la provincia. Su objetivo es reducir la burocracia, mejorar la organización y garantizar la transparencia en cada operación administrativa relacionada con la adquisición de bienes y servicios."
+      },
+      "agrotech-app": {
+        "title": "Agrotech - app gestión de productos y servicios",
+        "description": "Aplicación mobile para registro de aplicación de productos agrícolas, generar reportes de rendimiento y monitoreo de siembras."
+      },
+      "portfolio-legacy": {
+        "title": "Portfolio Web - versión anterior",
+        "description": "Versión anterior de mi portafolio web. Si bien no creo que sea un proyecto bien armado fue parte de mis primeros pasos. En el mismo podrán encontrar también mis primeros proyectos prueba que realicé por cuenta propia. Tales son: PokeApp, Spotytime (clón de Spotify), Snake Game, NotesApp, entre otros. No obtuvo mantenimiento por lo que algunos proyectos pueden no estar levantados."
+      }
+    }
+  },
+  "contact": {
+    "title": "¿Tenés una idea en mente o querés sumar fuerza a tu equipo?",
+    "subtitle": "Escribime y lo conversamos.",
+    "email": "lautaronasello@gmail.com",
+    "downloadCv": "Descargar CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}

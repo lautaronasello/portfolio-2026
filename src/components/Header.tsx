@@ -2,11 +2,13 @@
 
 import React, { useState } from 'react';
 import { useTheme } from './ThemeProvider';
+import { useLanguage } from './LanguageProvider';
 import { Palette } from '@/types/project';
 import { LuFileText, LuSparkles } from 'react-icons/lu';
 
 export const Header = () => {
   const { palette, setPalette } = useTheme();
+  const { language, setLanguage, t } = useLanguage();
   const [showTooltip, setShowTooltip] = useState(false);
 
   const colors: { id: Palette; label: string; bg: string }[] = [
@@ -34,30 +36,56 @@ export const Header = () => {
             href='#proyectos'
             className='hover:text-(--text-primary) transition'
           >
-            Proyectos
+            {t.header.nav.projects}
           </a>
           <a
             href='#capacidades'
             className='hover:text-(--text-primary) transition'
           >
-            Capacidades
+            {t.header.nav.capabilities}
           </a>
           <a
             href='#sobre-mi'
             className='hover:text-(--text-primary) transition'
           >
-            Sobre Mí
+            {t.header.nav.about}
           </a>
           <a
             href='#contacto'
             className='hover:text-(--text-primary) transition'
           >
-            Contacto
+            {t.header.nav.contact}
           </a>
         </nav>
 
         {/* Right Action Area */}
         <div className='flex items-center gap-4'>
+          {/* Language Switcher */}
+          <div className='flex items-center p-1 rounded-full border border-(--border-color) bg-(--bg-main) text-xs font-semibold'>
+            <button
+              onClick={() => setLanguage('es')}
+              className={`px-2.5 py-0.5 rounded-full transition-all cursor-pointer ${
+                language === 'es'
+                  ? 'bg-(--accent) text-white shadow-xs'
+                  : 'text-(--text-muted) hover:text-(--text-primary)'
+              }`}
+              aria-label='Cambiar a Español'
+            >
+              ES
+            </button>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-2.5 py-0.5 rounded-full transition-all cursor-pointer ${
+                language === 'en'
+                  ? 'bg-(--accent) text-white shadow-xs'
+                  : 'text-(--text-muted) hover:text-(--text-primary)'
+              }`}
+              aria-label='Switch to English'
+            >
+              EN
+            </button>
+          </div>
+
           {/* Palette Switcher with Hover Tooltip */}
           <div
             className='relative flex items-center gap-1.5 p-1.5 rounded-full border border-(--border-color) bg-(--bg-main)'
@@ -69,7 +97,7 @@ export const Header = () => {
                 key={c.id}
                 onClick={() => setPalette(c.id)}
                 aria-label={c.label}
-                className={`w-4 h-4 rounded-full ${c.bg} transition-transform ${
+                className={`w-4 h-4 rounded-full ${c.bg} transition-transform cursor-pointer ${
                   palette === c.id
                     ? 'ring-2 ring-offset-1 ring-slate-400 scale-110'
                     : 'opacity-70 hover:opacity-100'
@@ -82,10 +110,7 @@ export const Header = () => {
               <div className='absolute right-0 top-10 w-64 p-3 bg-slate-900 text-white text-xs rounded-xl shadow-xl z-50 animate-in fade-in slide-in-from-top-1 duration-200'>
                 <div className='flex items-start gap-2'>
                   <LuSparkles className='w-4 h-4 text-amber-400 shrink-0 mt-0.5' />
-                  <p className='leading-relaxed'>
-                    No me pude decidir que color de acento elegir para mis
-                    componentes. Lo dejo a tu elección!
-                  </p>
+                  <p className='leading-relaxed'>{t.header.tooltip}</p>
                 </div>
               </div>
             )}
@@ -93,16 +118,18 @@ export const Header = () => {
 
           {/* Download CV */}
           <a
-            href='/docs/cv.pdf'
+            href={language === 'en' ? '/docs/en_cv.pdf' : '/docs/cv.pdf'}
             target='_blank'
             rel='noopener noreferrer'
             className='flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg border border-(--border-color) hover:border-(--accent) hover:text-(--accent) transition'
           >
             <LuFileText className='w-3.5 h-3.5' />
-            <span>CV</span>
+            <span>{t.header.cvButton}</span>
           </a>
         </div>
       </div>
     </header>
   );
 };
+
+

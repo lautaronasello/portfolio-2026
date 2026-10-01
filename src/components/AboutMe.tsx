@@ -2,8 +2,11 @@
 import React from 'react';
 import { LuActivity, LuCoffee, LuTerminal } from 'react-icons/lu';
 import { motion } from 'framer-motion';
+import { useLanguage } from './LanguageProvider';
 
 export const AboutMe = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 40 }}
@@ -15,54 +18,44 @@ export const AboutMe = () => {
     >
       <div className='p-8 md:p-12 bg-(--bg-card) rounded-3xl border border-(--border-color)'>
         <h2 className='text-2xl font-bold tracking-tight text-(--text-primary) mb-6'>
-          Sobre Mí
+          {t.about.title}
         </h2>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {/* Professional Philosophy */}
           <div>
             <h3 className='text-lg font-semibold text-(--text-primary) mb-3'>
-              Detrás del código
+              {t.about.behindCodeTitle}
             </h3>
             <p className='text-sm text-(--text-muted) leading-relaxed mb-4'>
-              Abordo el desarrollo de software como un sistema evolutivo donde
-              las decisiones de arquitectura deben equilibrar mantenibilidad,
-              tiempo de entrega y requerimientos del negocio. Priorizo la
-              modularidad (Clean Architecture), el manejo explícito de errores y
-              la documentación transparente. Combino el rigor técnico con una
-              sólida capacidad de comunicación y colaboración. Concibo el
-              trabajo en equipo como un catalizador para mantener un ambiente de
-              alta productividad, mitigar la deuda técnica y acelerar la entrega
-              de productos de alto impacto.
+              {t.about.behindCodeText}
             </p>
           </div>
 
           {/* Human Factor / Outside terminal */}
           <div>
             <h3 className='text-lg font-semibold text-(--text-primary) mb-3'>
-              Fuera de la terminal
+              {t.about.outsideTerminalTitle}
             </h3>
             <ul className='space-y-3 text-sm text-(--text-muted)'>
               <li className='flex items-center gap-3 p-3 rounded-xl bg-(--bg-main) border border-(--border-color)'>
                 <LuCoffee className='w-4 h-4 text-(--accent) shrink-0' />
                 <span>
-                  <strong>Combustible:</strong> El mate o el cafe son
-                  infaltables en cada sesión de desarrollo.
+                  <strong>{t.about.fuelLabel}</strong> {t.about.fuelText}
                 </span>
               </li>
               <li className='flex items-center gap-3 p-3 rounded-xl bg-(--bg-main) border border-(--border-color)'>
                 <LuActivity className='w-4 h-4 text-(--accent) shrink-0' />
                 <span>
-                  <strong>En movimiento:</strong> Fuera de la computadora me vas
-                  a encontrar jugando al pádel o entrenando en un gimnasio.
+                  <strong>{t.about.movementLabel}</strong>{' '}
+                  {t.about.movementText}
                 </span>
               </li>
               <li className='flex items-center gap-3 p-3 rounded-xl bg-(--bg-main) border border-(--border-color)'>
                 <LuTerminal className='w-4 h-4 text-(--accent) shrink-0' />
                 <span>
-                  <strong>Curiosidad:</strong> Tocar la guitarra y caminar son
-                  mis formas de liberar la cabeza cuando no encuentro una
-                  solucion a un problema.
+                  <strong>{t.about.curiosityLabel}</strong>{' '}
+                  {t.about.curiosityText}
                 </span>
               </li>
             </ul>
@@ -72,3 +65,4 @@ export const AboutMe = () => {
     </motion.section>
   );
 };
+

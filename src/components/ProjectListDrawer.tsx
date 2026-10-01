@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { AIProject } from '@/types/project';
+import { useLanguage } from './LanguageProvider';
 import { LuCheck, LuX } from 'react-icons/lu';
 
 interface ProjectListDrawerProps {
@@ -13,6 +14,13 @@ export const ProjectListDrawer: React.FC<ProjectListDrawerProps> = ({
   project,
   onClose,
 }) => {
+  const { t } = useLanguage();
+  const itemTrans =
+    t.aiProjects.items[project.id as keyof typeof t.aiProjects.items];
+
+  const title = itemTrans?.title ?? project.title;
+  const roleHighlights = itemTrans?.roleHighlights ?? project.roleHighlights;
+
   return (
     <>
       <div
@@ -29,10 +37,10 @@ export const ProjectListDrawer: React.FC<ProjectListDrawerProps> = ({
             <div className='flex items-center justify-between border-b border-(--border-color) pb-4 mb-6'>
               <div>
                 <span className='text-xs font-semibold text-(--accent) uppercase tracking-wider'>
-                  Mi rol en la configuración
+                  {t.aiProjects.myRole}
                 </span>
                 <h3 className='text-2xl font-bold text-(--text-primary) mt-1'>
-                  {project.title}
+                  {title}
                 </h3>
               </div>
               <button
@@ -44,7 +52,7 @@ export const ProjectListDrawer: React.FC<ProjectListDrawerProps> = ({
             </div>
 
             <div className='pt-3 space-y-2'>
-              {project.roleHighlights.map((item, idx) => (
+              {roleHighlights.map((item, idx) => (
                 <li
                   key={idx}
                   className='flex items-start gap-2.5 text-sm text-(--text-muted)'
@@ -60,3 +68,4 @@ export const ProjectListDrawer: React.FC<ProjectListDrawerProps> = ({
     </>
   );
 };
+
