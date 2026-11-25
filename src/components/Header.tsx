@@ -3,133 +3,210 @@
 import React, { useState } from 'react';
 import { useTheme } from './ThemeProvider';
 import { useLanguage } from './LanguageProvider';
-import { Palette } from '@/types/project';
-import { LuFileText, LuSparkles } from 'react-icons/lu';
+import { LuMenu, LuX, LuSun, LuMoon } from 'react-icons/lu';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const Header = () => {
-  const { palette, setPalette } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
-  const [showTooltip, setShowTooltip] = useState(false);
-
-  const colors: { id: Palette; label: string; bg: string }[] = [
-    { id: 'indigo', label: 'Índigo', bg: 'bg-[#4F46E5]' },
-    { id: 'teal', label: 'Teal', bg: 'bg-[#0F766E]' },
-    { id: 'amber', label: 'Amber', bg: 'bg-[#B45309]' },
-  ];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className='sticky top-0 z-40 w-full backdrop-blur-md bg-white/70 border-b border-(--border-color)'>
-      <div className='max-w-6xl mx-auto px-6 h-16 flex items-center justify-between'>
-        {/* Logo / Name */}
+    <header className='sticky top-0 z-40 w-full backdrop-blur-md bg-(--bg-card)/75 border-b border-(--border-color)'>
+      <div className='max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4'>
+        {/* Confident Identity / Logo */}
         <a
-          href='#'
-          className='font-bold text-lg tracking-tight hover:opacity-80 transition'
+          href='#hero'
+          aria-label={
+            language === 'en'
+              ? 'Lautaro Nasello - Go to top'
+              : 'Lautaro Nasello - Ir al inicio'
+          }
+          className='font-bold text-lg tracking-tight hover:opacity-85 transition inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) rounded-lg shrink-0'
         >
-          <span className='text-(--accent)'>&lt;</span>Lautaro Martin Nasello
-          Vittar
-          <span className='text-(--accent)'>/&gt;</span>
+          <span className='text-(--text-primary)'>Lautaro Nasello</span>
+          <span className='text-xs font-semibold text-(--accent) hidden sm:inline tracking-wider'>
+            / Fullstack
+          </span>
         </a>
 
-        {/* Navigation */}
-        <nav className='hidden md:flex items-center gap-8 text-sm font-medium text-(--text-muted)'>
+        {/* Desktop Navigation */}
+        <nav
+          className='hidden md:flex items-center gap-8 text-sm font-medium text-(--text-muted)'
+          aria-label={
+            language === 'en' ? 'Main navigation' : 'Navegación principal'
+          }
+        >
           <a
             href='#proyectos'
-            className='hover:text-(--text-primary) transition'
+            className='hover:text-(--text-primary) hover:underline underline-offset-8 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) rounded-md'
           >
             {t.header.nav.projects}
           </a>
           <a
             href='#capacidades'
-            className='hover:text-(--text-primary) transition'
+            className='hover:text-(--text-primary) hover:underline underline-offset-8 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) rounded-md'
           >
             {t.header.nav.capabilities}
           </a>
           <a
             href='#sobre-mi'
-            className='hover:text-(--text-primary) transition'
+            className='hover:text-(--text-primary) hover:underline underline-offset-8 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) rounded-md'
           >
             {t.header.nav.about}
           </a>
           <a
             href='#contacto'
-            className='hover:text-(--text-primary) transition'
+            className='hover:text-(--text-primary) hover:underline underline-offset-8 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) rounded-md'
           >
             {t.header.nav.contact}
           </a>
         </nav>
 
-        {/* Right Action Area */}
-        <div className='flex items-center gap-4'>
+        {/* Right Action Controls: Language & Theme Toggle */}
+        <div className='flex items-center gap-3 shrink-0'>
           {/* Language Switcher */}
-          <div className='flex items-center p-1 rounded-full border border-(--border-color) bg-(--bg-main) text-xs font-semibold'>
+          <div
+            role='group'
+            aria-label={
+              language === 'en' ? 'Select language' : 'Seleccionar idioma'
+            }
+            className='flex items-center p-0.5 rounded-full border border-(--border-color) bg-(--bg-main) text-xs font-semibold'
+          >
             <button
+              type='button'
               onClick={() => setLanguage('es')}
-              className={`px-2.5 py-0.5 rounded-full transition-all cursor-pointer ${
+              aria-pressed={language === 'es'}
+              className={`min-h-[28px] px-2.5 rounded-full transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) ${
                 language === 'es'
                   ? 'bg-(--accent) text-white shadow-xs'
                   : 'text-(--text-muted) hover:text-(--text-primary)'
               }`}
-              aria-label='Cambiar a Español'
             >
               ES
             </button>
             <button
+              type='button'
               onClick={() => setLanguage('en')}
-              className={`px-2.5 py-0.5 rounded-full transition-all cursor-pointer ${
+              aria-pressed={language === 'en'}
+              className={`min-h-[28px] px-2.5 rounded-full transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) ${
                 language === 'en'
                   ? 'bg-(--accent) text-white shadow-xs'
                   : 'text-(--text-muted) hover:text-(--text-primary)'
               }`}
-              aria-label='Switch to English'
             >
               EN
             </button>
           </div>
 
-          {/* Palette Switcher with Hover Tooltip */}
-          <div
-            className='relative flex items-center gap-1.5 p-1.5 rounded-full border border-(--border-color) bg-(--bg-main)'
-            onMouseEnter={() => setShowTooltip(true)}
-            onMouseLeave={() => setShowTooltip(false)}
+          {/* Theme Toggle Button (Light / Dark) */}
+          <button
+            type='button'
+            onClick={toggleTheme}
+            aria-label={
+              language === 'en'
+                ? theme === 'dark'
+                  ? 'Switch to light mode'
+                  : 'Switch to dark mode'
+                : theme === 'dark'
+                  ? 'Cambiar a modo claro'
+                  : 'Cambiar a modo oscuro'
+            }
+            title={
+              language === 'en'
+                ? theme === 'dark'
+                  ? 'Light mode'
+                  : 'Dark mode'
+                : theme === 'dark'
+                  ? 'Modo claro'
+                  : 'Modo oscuro'
+            }
+            className='w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border border-(--border-color) bg-(--bg-main) text-(--text-muted) hover:text-(--accent) hover:border-(--accent) active:scale-[0.95] transition cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent)'
           >
-            {colors.map((c) => (
-              <button
-                key={c.id}
-                onClick={() => setPalette(c.id)}
-                aria-label={c.label}
-                className={`w-4 h-4 rounded-full ${c.bg} transition-transform cursor-pointer ${
-                  palette === c.id
-                    ? 'ring-2 ring-offset-1 ring-slate-400 scale-110'
-                    : 'opacity-70 hover:opacity-100'
-                }`}
-              />
-            ))}
-
-            {/* Easter Egg Tooltip */}
-            {showTooltip && (
-              <div className='absolute right-0 top-10 w-64 p-3 bg-slate-900 text-white text-xs rounded-xl shadow-xl z-50 animate-in fade-in slide-in-from-top-1 duration-200'>
-                <div className='flex items-start gap-2'>
-                  <LuSparkles className='w-4 h-4 text-amber-400 shrink-0 mt-0.5' />
-                  <p className='leading-relaxed'>{t.header.tooltip}</p>
-                </div>
-              </div>
+            {theme === 'dark' ? (
+              <LuSun className='w-4 h-4 text-amber-400 transition-transform duration-300 hover:rotate-45' aria-hidden='true' />
+            ) : (
+              <LuMoon className='w-4 h-4 text-(--text-primary) transition-transform duration-300 hover:-rotate-12' aria-hidden='true' />
             )}
-          </div>
+          </button>
 
-          {/* Download CV */}
-          <a
-            href={language === 'en' ? '/docs/en_cv.pdf' : '/docs/cv.pdf'}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg border border-(--border-color) hover:border-(--accent) hover:text-(--accent) transition'
+          {/* Mobile Menu Toggle Button */}
+          <button
+            type='button'
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls='mobile-navigation'
+            aria-label={
+              isMobileMenuOpen
+                ? language === 'en'
+                  ? 'Close menu'
+                  : 'Cerrar menú'
+                : language === 'en'
+                  ? 'Open navigation menu'
+                  : 'Abrir menú de navegación'
+            }
+            className='md:hidden p-2 rounded-xl border border-(--border-color) bg-(--bg-card) text-(--text-primary) hover:border-(--accent) hover:text-(--accent) active:scale-[0.96] transition cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent)'
           >
-            <LuFileText className='w-3.5 h-3.5' />
-            <span>{t.header.cvButton}</span>
-          </a>
+            {isMobileMenuOpen ? (
+              <LuX className='w-5 h-5' aria-hidden='true' />
+            ) : (
+              <LuMenu className='w-5 h-5' aria-hidden='true' />
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Dropdown Sheet */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            id='mobile-navigation'
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className='md:hidden border-b border-(--border-color) bg-(--bg-card)/95 backdrop-blur-xl overflow-hidden'
+          >
+            <nav
+              className='px-6 py-6 flex flex-col gap-4 text-base font-semibold'
+              aria-label={
+                language === 'en'
+                  ? 'Mobile navigation'
+                  : 'Navegación móvil'
+              }
+            >
+              <a
+                href='#proyectos'
+                onClick={() => setIsMobileMenuOpen(false)}
+                className='text-(--text-muted) hover:text-(--accent) transition-colors py-1'
+              >
+                {t.header.nav.projects}
+              </a>
+              <a
+                href='#capacidades'
+                onClick={() => setIsMobileMenuOpen(false)}
+                className='text-(--text-muted) hover:text-(--accent) transition-colors py-1'
+              >
+                {t.header.nav.capabilities}
+              </a>
+              <a
+                href='#sobre-mi'
+                onClick={() => setIsMobileMenuOpen(false)}
+                className='text-(--text-muted) hover:text-(--accent) transition-colors py-1'
+              >
+                {t.header.nav.about}
+              </a>
+              <a
+                href='#contacto'
+                onClick={() => setIsMobileMenuOpen(false)}
+                className='text-(--text-muted) hover:text-(--accent) transition-colors py-1'
+              >
+                {t.header.nav.contact}
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
-
-

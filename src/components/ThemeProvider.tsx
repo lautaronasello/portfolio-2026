@@ -1,39 +1,48 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { Palette } from '@/types/project';
+import { Theme } from '@/types/project';
 
 interface ThemeContextType {
-  palette: Palette;
-  setPalette: (p: Palette) => void;
+  theme: Theme;
+  toggleTheme: () => void;
+  setTheme: (t: Theme) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  palette: 'indigo',
-  setPalette: () => {},
+  theme: 'light',
+  toggleTheme: () => {},
+  setTheme: () => {},
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [palette, setPalette] = useState<Palette>('indigo');
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
-    const saved = localStorage.getItem('theme-palette') as Palette;
-    if (saved && ['indigo', 'teal', 'amber'].includes(saved)) {
-      setPalette(saved);
+    const saved = localStorage.getItem('app-theme') as Theme | null;
+    if (saved === 'dark' || saved === 'light') {
+      setTheme(saved);
       document.documentElement.setAttribute('data-theme', saved);
     } else {
-      document.documentElement.setAttribute('data-theme', 'indigo');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme: Theme = prefersDark ? 'dark' : 'light';
+      setTheme(initialTheme);
+      document.documentElement.setAttribute('data-theme', initialTheme);
     }
   }, []);
 
-  const changePalette = (newPalette: Palette) => {
-    setPalette(newPalette);
-    localStorage.setItem('theme-palette', newPalette);
-    document.documentElement.setAttribute('data-theme', newPalette);
+  const changeTheme = (newTheme: Theme) => {
+    setTheme(newTheme);
+    localStorage.setItem('app-theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
+
+  const toggleTheme = () => {
+    changeTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (
-    <ThemeContext.Provider value={{ palette, setPalette: changePalette }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme: changeTheme }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -3,6 +3,7 @@ export interface Project {
   title: string;
   category: string;
   tags: string[];
+  tier?: 'featured' | 'systems';
   screenshots?: string[];
   clientView: {
     problem: string;
@@ -45,4 +46,4 @@ export interface OtherProject {
   category?: string;
 }
 
-export type Palette = 'indigo' | 'teal' | 'amber';
+export type Theme = 'light' | 'dark';

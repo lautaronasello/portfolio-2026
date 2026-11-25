@@ -112,13 +112,18 @@
     "subtitle": "Products designed to solve real problems with scalable architecture.",
     "viewArchitecture": "View architecture",
     "viewOtherProjects": "View other projects",
+    "tabs": {
+      "featured": "Featured",
+      "systems": "Enterprise & Systems",
+      "all": "All"
+    },
     "items": {
       "don-oficios": {
         "title": "Don Oficios",
         "category": "App Mobile & Social Network",
         "clientView": {
           "problem": "Difficulty for people to find trusted professionals (plumbers, electricians, masons) with verified references and proximity.",
-          "solution": "Client application (code non-owned). Trades social network that allows exploring nearby services, verifying location, reading/writing reviews, and contacting directly via private chat.",
+          "solution": "Proximity services social network and marketplace allowing users to explore local providers, verify locations, read/write reviews, and communicate via private real-time chat.",
           "businessValue": "Integrated monetization system where service providers acquire tokens via Mercado Pago to advertise their services within the app."
         },
         "techView": {
@@ -128,8 +133,7 @@
             "Geolocation module for efficient filtering by proximity radius.",
             "End-to-end encrypted chat and rating system with weighted calculation.",
             "Role-based authentication system (user, provider, admin).",
-            "Real-time push notifications for new service requests and messages.",
-            "Geolocation system for efficient filtering by proximity radius."
+            "Real-time push notifications for new service requests and messages."
           ]
         }
       },
@@ -155,7 +159,7 @@
         "category": "Web & Mobile Ecosystem",
         "clientView": {
           "problem": "Scattered information in corporate events and conferences (schedules, speakers) and lack of interaction channels among attendees.",
-          "solution": "Client application (code non-owned). Comprehensive platform: Web Dashboard for event organizers to manage schedules and metrics, plus a mobile app for attendees to check agendas and network in real time.",
+          "solution": "Comprehensive event platform: Web dashboard for organizers to manage schedules and live metrics, paired with a native mobile app for attendee networking and real-time agendas.",
           "businessValue": "Operational centralization that reduces logistics costs, boosts real-time participation, and fosters interaction among attendees."
         },
         "techView": {
@@ -188,6 +192,57 @@
             "Multi-merchant manager with instant switching between store branches and independent balances.",
             "POS-style checkout emulator with real-time validation.",
             "API documented with Swagger and containerized with Docker Compose."
+          ]
+        }
+      },
+      "bandeja-compras-contrataciones": {
+        "title": "Procurement & Contracts Tray",
+        "category": "Public Sector & Procurement",
+        "clientView": {
+          "problem": "Fragmentation and delays in public procurement workflows for goods and services across provincial departments.",
+          "solution": "Centralized platform engineered to streamline government procurement and bidding procedures across provincial entities.",
+          "businessValue": "Guarantees transparency in every administrative operation, eliminates bureaucratic overhead, and unifies procurement records."
+        },
+        "techView": {
+          "architecture": "Multi-department administrative web platform backed by .NET/Express and relational MySQL database with hierarchical approval workflows.",
+          "highlights": [
+            "Requisition module with automated purchase order bundling.",
+            "Unified procurement tray and tender tracking for public entities.",
+            "Comprehensive audit trail for public sector administrative purchases."
+          ]
+        }
+      },
+      "gestion-integral-pedidos": {
+        "title": "Integrated Supply Order System",
+        "category": "Public Sector Logistics",
+        "clientView": {
+          "problem": "Lack of centralized supply tracking, leading to procurement delays and inventory discrepancies across public offices.",
+          "solution": "End-to-end system enabling public entities to generate, manage, and trace supply orders transparently and reliably.",
+          "businessValue": "Full traceability of government supply requisitions and optimized budget allocations for materials."
+        },
+        "techView": {
+          "architecture": "Client-server architecture with .NET/Express backend and relational MySQL database optimized for auditing.",
+          "highlights": [
+            "Supply requisition module with hierarchical department approvals.",
+            "Administrative command center with consumption metrics and alerts.",
+            "Automated delivery reporting and digital receipt sign-off."
+          ]
+        }
+      },
+      "agrotech-app": {
+        "title": "Agrotech - Farm & Crop Management",
+        "category": "Mobile App & Agrotech",
+        "clientView": {
+          "problem": "Absence of real-time field logging for chemical applications and loss of traceability across agricultural lots.",
+          "solution": "Offline-first mobile application to log agrochemical applications, generate crop yield reports, and track field work.",
+          "businessValue": "Input cost optimization and exact yield calculation per hectare without cellular connectivity."
+        },
+        "techView": {
+          "architecture": "Offline-first mobile ecosystem with Hive local storage and BLoC architecture, syncing seamlessly with NestJS backend.",
+          "highlights": [
+            "Modular Flutter architecture with BLoC and resilient background syncing.",
+            "Offline registration and auditing of chemical treatments per field lot.",
+            "Yield reporting and crop health monitoring per planting season."
           ]
         }
       }

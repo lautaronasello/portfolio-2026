@@ -4,6 +4,7 @@ export const projectsData: Project[] = [
   {
     id: 'don-oficios',
     title: 'Don Oficios',
+    tier: 'featured',
     category: 'App Mobile & Social Network',
     tags: [
       'Flutter',
@@ -16,7 +17,7 @@ export const projectsData: Project[] = [
       problem:
         'Dificultad de las personas para encontrar profesionales de confianza (plomeros, electricistas, albañiles) con referencias verificadas y cercanía.',
       solution:
-        'Aplicación realizada para cliente de la cual no soy dueño del codigo. Red social de oficios que permite explorar servicios cercanos, verificar ubicación, ver/realizar reseñas y contactar directamente por chat privado.',
+        'Red social y marketplace de servicios de proximidad que permite explorar prestadores cercanos, verificar ubicación, ver reseñas y contactar directamente por chat privado en tiempo real.',
       businessValue:
         'Sistema integrado de monetización donde los proveedores adquieren tokens vía Mercado Pago para publicitar sus servicios dentro de la app.',
     },
@@ -40,7 +41,6 @@ export const projectsData: Project[] = [
         'Chat cifrado de punta a punta y sistema de puntuación con cálculo ponderado.',
         'Sistema de autenticacion basado en roles (user, provider, admin)',
         'Notificaciones push en tiempo real para nuevas solicitudes de servicios y mensajes.',
-        'Sistema de geolocalización para el filtrado eficiente por radio de cercanía.',
       ],
       webUrl: 'https://donoficios.com/',
       appStoreUrl: 'https://apps.apple.com/ar/app/don-oficios/id6748660264',
@@ -60,6 +60,7 @@ export const projectsData: Project[] = [
   {
     id: 'padel-ai-assistant',
     title: 'Padel AI assistant',
+    tier: 'featured',
     category: 'Web App & E-commerce IA',
     tags: [
       'Next.js',
@@ -106,6 +107,7 @@ export const projectsData: Project[] = [
   {
     id: 'pamphlet',
     title: 'Pamphlet',
+    tier: 'featured',
     category: 'Ecosistema Web & Mobile',
     tags: [
       'Next.js',
@@ -119,7 +121,7 @@ export const projectsData: Project[] = [
       problem:
         'Dispersión de información en eventos corporativos y conferencias (cronogramas, oradores) y falta de canales de interacción entre asistentes.',
       solution:
-        'Aplicación realizada para cliente de la cual no soy dueño del codigo. Plataforma integral: Dashboard web para que organizadores gestionen el evento y métricas, más app móvil para que los participantes consulten la agenda y hagan networking en tiempo real.',
+        'Plataforma integral para eventos y conferencias: Dashboard web para que organizadores gestionen el cronograma y métricas en vivo, más app móvil para que los participantes consulten la agenda y hagan networking en tiempo real.',
       businessValue:
         'Centralización operativa que reduce costos logísticos, potencia la participación en tiempo real y fomenta la interacción entre asistentes.',
     },
@@ -157,6 +159,7 @@ export const projectsData: Project[] = [
   {
     id: 'nexo',
     title: 'NEXO Merchant Console',
+    tier: 'featured',
     category: 'Fintech Platform & Dashboard',
     tags: [
       'Next.js',
@@ -208,6 +211,103 @@ export const projectsData: Project[] = [
         'Gestor multicomercio con conmutación instantánea entre sucursales y balances independientes.',
         'Emulador de cobros tipo POS con validación en tiempo real.',
         'API documentada con Swagger y contenerizada con Docker Compose.',
+      ],
+    },
+  },
+  {
+    id: 'bandeja-compras-contrataciones',
+    title: 'Bandeja compras y contrataciones',
+    tier: 'systems',
+    category: 'Gestión Pública & Compras',
+    tags: ['React', '.NET', 'MySQL', 'Material UI', 'Express'],
+    screenshots: [
+      '/projects/cyc/home.png',
+      '/projects/cyc/bandeja.png',
+      '/projects/cyc/requerimientos.png',
+      '/projects/cyc/combinar.png',
+    ],
+    clientView: {
+      problem:
+        'Fragmentación y lentitud en los procesos de adquisición de bienes y servicios en dependencias públicas de la provincia.',
+      solution:
+        'Plataforma integral diseñada para centralizar y optimizar la gestión de compras y contrataciones en dependencias públicas de la provincia.',
+      businessValue:
+        'Garantiza transparencia en cada operación administrativa, reduce la burocracia y unifica expedientes de compras estatales.',
+    },
+    techView: {
+      stack: ['React', '.NET', 'MySQL', 'Express', 'Material UI'],
+      architecture:
+        'Sistema web administrativo multi-dependencia con backend en .NET/Express y base de datos relacional MySQL con flujos de aprobación jerárquica.',
+      highlights: [
+        'Módulo de requerimientos y combinación de órdenes de compra.',
+        'Bandeja unificada de expedientes y contrataciones para dependencias públicas.',
+        'Auditoría y trazabilidad completa de compras administrativas.',
+      ],
+      screenshots: [
+        '/projects/cyc/home.png',
+        '/projects/cyc/bandeja.png',
+        '/projects/cyc/requerimientos.png',
+        '/projects/cyc/combinar.png',
+      ],
+    },
+  },
+  {
+    id: 'gestion-integral-pedidos',
+    title: 'Sistema de Gestión integral de pedidos',
+    tier: 'systems',
+    category: 'Gestión Pública & Logística',
+    tags: ['React', '.NET', 'MySQL', 'Express', 'Material UI'],
+    screenshots: [
+      '/projects/gip/home.png',
+      '/projects/gip/solicitudes.png',
+      '/projects/gip/confirmacion.png',
+    ],
+    clientView: {
+      problem:
+        'Dificultad de las dependencias públicas para solicitar, distribuir y controlar insumos y materiales de forma unificada.',
+      solution:
+        'Sistema integral que permite generar, administrar y auditar pedidos de insumos y materiales de manera sencilla y centralizada.',
+      businessValue:
+        'Trazabilidad completa de solicitudes de insumos y optimización del gasto público en materiales.',
+    },
+    techView: {
+      stack: ['React', '.NET', 'MySQL', 'Express', 'Material UI'],
+      architecture:
+        'Arquitectura cliente-servidor con backend en .NET/Express y base de datos relacional MySQL optimizada para auditoría.',
+      highlights: [
+        'Módulo de solicitudes de insumos con validación jerárquica.',
+        'Panel de control de pedidos para administradores con métricas de consumo.',
+        'Generación de reportes de entrega y confirmación de recepción.',
+      ],
+      screenshots: [
+        '/projects/gip/home.png',
+        '/projects/gip/solicitudes.png',
+        '/projects/gip/confirmacion.png',
+      ],
+    },
+  },
+  {
+    id: 'agrotech-app',
+    title: 'Agrotech - Gestión Agropecuaria',
+    tier: 'systems',
+    category: 'App Mobile & Agropecuaria',
+    tags: ['Flutter', 'NestJS', 'Hive', 'BLoC', 'Dart'],
+    clientView: {
+      problem:
+        'Falta de registro en tiempo real de insumos aplicados en el campo y pérdida de trazabilidad en lotes de siembra.',
+      solution:
+        'Aplicación móvil offline-first para registrar la aplicación de productos agrícolas, generar reportes de rendimiento y monitorear siembras.',
+      businessValue:
+        'Optimización de costos en agroquímicos y monitoreo preciso del rendimiento por hectárea.',
+    },
+    techView: {
+      stack: ['Flutter', 'Dart', 'NestJS', 'Hive', 'BLoC Pattern'],
+      architecture:
+        'Ecosistema móvil offline-first con almacenamiento local en Hive y arquitectura BLoC, sincronizado con backend en NestJS.',
+      highlights: [
+        'Arquitectura modular en Flutter con BLoC y sincronización en segundo plano.',
+        'Registro y auditoría offline de aplicaciones de agroquímicos por lote.',
+        'Generación de reportes de siembra y rendimiento por campaña.',
       ],
     },
   },

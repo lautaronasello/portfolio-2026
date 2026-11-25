@@ -112,13 +112,18 @@
     "subtitle": "Productos diseñados para resolver problemas reales con arquitectura escalable.",
     "viewArchitecture": "Ver arquitectura",
     "viewOtherProjects": "Ver otros proyectos",
+    "tabs": {
+      "featured": "Destacados",
+      "systems": "Gestión & Enterprise",
+      "all": "Todos"
+    },
     "items": {
       "don-oficios": {
         "title": "Don Oficios",
         "category": "App Mobile & Social Network",
         "clientView": {
           "problem": "Dificultad de las personas para encontrar profesionales de confianza (plomeros, electricistas, albañiles) con referencias verificadas y cercanía.",
-          "solution": "Aplicación realizada para cliente de la cual no soy dueño del código. Red social de oficios que permite explorar servicios cercanos, verificar ubicación, ver/realizar reseñas y contactar directamente por chat privado.",
+          "solution": "Red social y marketplace de servicios de proximidad que permite explorar prestadores cercanos, verificar ubicación, ver reseñas y contactar directamente por chat privado en tiempo real.",
           "businessValue": "Sistema integrado de monetización donde los proveedores adquieren tokens vía Mercado Pago para publicitar sus servicios dentro de la app."
         },
         "techView": {
@@ -128,8 +133,7 @@
             "Módulo de geolocalización para filtrado eficiente por radio de cercanía.",
             "Chat cifrado de punta a punta y sistema de puntuación con cálculo ponderado.",
             "Sistema de autenticación basado en roles (user, provider, admin).",
-            "Notificaciones push en tiempo real para nuevas solicitudes de servicios y mensajes.",
-            "Sistema de geolocalización para el filtrado eficiente por radio de cercanía."
+            "Notificaciones push en tiempo real para nuevas solicitudes de servicios y mensajes."
           ]
         }
       },
@@ -155,7 +159,7 @@
         "category": "Ecosistema Web & Mobile",
         "clientView": {
           "problem": "Dispersión de información en eventos corporativos y conferencias (cronogramas, oradores) y falta de canales de interacción entre asistentes.",
-          "solution": "Aplicación realizada para cliente de la cual no soy dueño del código. Plataforma integral: Dashboard web para que organizadores gestionen el evento y métricas, más app móvil para que los participantes consulten la agenda y hagan networking en tiempo real.",
+          "solution": "Plataforma integral para eventos y conferencias: Dashboard web para que organizadores gestionen el cronograma y métricas en vivo, más app móvil para que los participantes consulten la agenda y hagan networking en tiempo real.",
           "businessValue": "Centralización operativa que reduce costos logísticos, potencia la participación en tiempo real y fomenta la interacción entre asistentes."
         },
         "techView": {
@@ -188,6 +192,57 @@
             "Gestor multicomercio con conmutación instantánea entre sucursales y balances independientes.",
             "Emulador de cobros tipo POS con validación en tiempo real.",
             "API documentada con Swagger y contenerizada con Docker Compose."
+          ]
+        }
+      },
+      "bandeja-compras-contrataciones": {
+        "title": "Bandeja compras y contrataciones",
+        "category": "Gestión Pública & Compras",
+        "clientView": {
+          "problem": "Fragmentación y lentitud en los procesos de adquisición de bienes y servicios en dependencias públicas de la provincia.",
+          "solution": "Plataforma integral diseñada para centralizar y optimizar la gestión de compras y contrataciones en dependencias públicas de la provincia.",
+          "businessValue": "Garantiza transparencia en cada operación administrativa, reduce la burocracia y unifica expedientes de compras estatales."
+        },
+        "techView": {
+          "architecture": "Sistema web administrativo multi-dependencia con backend en .NET/Express y base de datos relacional MySQL con flujos de aprobación jerárquica.",
+          "highlights": [
+            "Módulo de requerimientos y combinación de órdenes de compra.",
+            "Bandeja unificada de expedientes y contrataciones para dependencias públicas.",
+            "Auditoría y trazabilidad completa de compras administrativas."
+          ]
+        }
+      },
+      "gestion-integral-pedidos": {
+        "title": "Sistema de Gestión integral de pedidos",
+        "category": "Gestión Pública & Logística",
+        "clientView": {
+          "problem": "Dificultad de las dependencias públicas para solicitar, distribuir y controlar insumos y materiales de forma unificada.",
+          "solution": "Sistema integral que permite generar, administrar y auditar pedidos de insumos y materiales de manera sencilla y centralizada.",
+          "businessValue": "Trazabilidad completa de solicitudes de insumos y optimización del gasto público en materiales."
+        },
+        "techView": {
+          "architecture": "Arquitectura cliente-servidor con backend en .NET/Express y base de datos relacional MySQL optimizada para auditoría.",
+          "highlights": [
+            "Módulo de solicitudes de insumos con validación jerárquica.",
+            "Panel de control de pedidos para administradores con métricas de consumo.",
+            "Generación de reportes de entrega y confirmación de recepción."
+          ]
+        }
+      },
+      "agrotech-app": {
+        "title": "Agrotech - Gestión Agropecuaria",
+        "category": "App Mobile & Agropecuaria",
+        "clientView": {
+          "problem": "Falta de registro en tiempo real de insumos aplicados en el campo y pérdida de trazabilidad en lotes de siembra.",
+          "solution": "Aplicación móvil offline-first para registrar la aplicación de productos agrícolas, generar reportes de rendimiento y monitorear siembras.",
+          "businessValue": "Optimización de costos en agroquímicos y monitoreo preciso del rendimiento por hectárea."
+        },
+        "techView": {
+          "architecture": "Ecosistema móvil offline-first con almacenamiento local en Hive y arquitectura BLoC, sincronizado con backend en NestJS.",
+          "highlights": [
+            "Arquitectura modular en Flutter con BLoC y sincronización en segundo plano.",
+            "Registro y auditoría offline de aplicaciones de agroquímicos por lote.",
+            "Generación de reportes de siembra y rendimiento por campaña."
           ]
         }
       }
