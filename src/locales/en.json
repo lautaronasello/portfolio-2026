@@ -12,8 +12,11 @@
   "hero": {
     "title": "I help build refined, functional, and intuitive web and mobile products.",
     "subtitle": "My name is Lautaro and I am a Fullstack Developer specialized in web and mobile ecosystems. I design backend architectures and build user-centered visual interfaces.",
+    "viewProjects": "View Projects",
     "sendEmail": "Send Email",
-    "downloadCv": "Download CV"
+    "downloadCv": "Download CV",
+    "status": "Available for new projects",
+    "techStack": "Next.js · NestJS · Flutter · Clean Architecture"
   },
   "about": {
     "title": "About Me",

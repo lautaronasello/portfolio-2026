@@ -13,8 +13,8 @@ export const Header = () => {
 
   const colors: { id: Palette; label: string; bg: string }[] = [
     { id: 'indigo', label: 'Índigo', bg: 'bg-[#4F46E5]' },
-    { id: 'teal', label: 'Teal', bg: 'bg-[#0D9488]' },
-    { id: 'amber', label: 'Amber', bg: 'bg-[#D97706]' },
+    { id: 'teal', label: 'Teal', bg: 'bg-[#0F766E]' },
+    { id: 'amber', label: 'Amber', bg: 'bg-[#B45309]' },
   ];
 
   return (
